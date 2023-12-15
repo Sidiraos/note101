@@ -1,15 +1,10 @@
+import NotesList from "../layouts/NavBar_Layout/NotesList";
 const NavBar = () => {
+	console.log('nav bar composant render')
 	return (
-		<nav className="bg-slate-100 min-w-[22%] h-full shrink-0 pt-5 pb-5 hidden md:block">
-			<h1 className="text-2xl font-medium text-center text-slate-900 h-20 flex justify-center items-center border-b border-gray-300 ">Mes notes</h1>
-			<ul>
-				<li className="border-b border-gray-300 hover:bg-slate-200 transition-colors duration-150 ease-in-out">
-					<button className="py-4 px-4 flex flex-col justify-center w-full text-slate-800">
-						<p className="text-xl">Cuisine</p>
-						<p className="text-slate-700 text-lg">Préparer des crepes</p>
-					</button>
-				</li>
-			</ul>
+		<nav className="bg-slate-100 min-w-[22%] h-full shrink-0 pb-5 hidden md:block overflow-y-auto relative">
+			<h1 className="text-2xl py-5 font-medium text-center text-slate-900 h-24 flex justify-center items-center border-b border-gray-300 sticky top-0 bg-slate-100">Mes notes</h1>
+			<NotesList />
 		</nav>
 	);
 };
