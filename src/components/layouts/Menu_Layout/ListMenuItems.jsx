@@ -15,9 +15,10 @@ const ListMenuItems = () => {
 			<img src={spinnerLogo} alt="loading logo" />{' '}
 			<p className="text-slate-100">chargement des notes</p>
 		</div>
-	) : error ? (
-		<p className="text-red-500 text-center mt-8">
-			on n'a pas pu recuperer les notes
+	) : error && notes.length === 0 ? (
+		<p className="text-red-500 text-center mt-8 flex flex-col gap-1">
+			<span>on n'a pas pu recuperer les notes de la base de données mais</span>
+			<span className='text-slate-200'>Vous Pouvez crée une note en cliquant sur le bouton à gauche</span>
 		</p>
 	) : (
 		<ul
@@ -27,7 +28,7 @@ const ListMenuItems = () => {
 				justifyContent: 'center',
 			}}
 		>
-			{notes &&
+			{notes.length > 0 &&
 				notes.map((note) => <MenuItem key={note.id} note={note} />)}
 		</ul>
 	);

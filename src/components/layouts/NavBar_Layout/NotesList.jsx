@@ -6,7 +6,7 @@ const NotesList = () => {
     const {notes} = notesData
   return (
     <ul>
-      {notes && notes.map((note) => (
+      {notes.length > 0 && notes.map((note) => (
         <NotesListItem key={note.id} note={note} />
       ))}
 

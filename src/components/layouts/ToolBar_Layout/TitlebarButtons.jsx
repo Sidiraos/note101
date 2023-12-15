@@ -1,4 +1,5 @@
 const TitlebarButtons = () => {
+  console.log('titlebar btn toolbar render');
   return (
     <div className="flex gap-2">
       <button className="rounded-full w-4 h-4 bg-red-500"></button>

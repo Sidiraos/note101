@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { BASE_URL } from '../../../constant/constant';
 
 const initialState = {
-	notes: null,
+	notes: [],
 	loading: false,
 	error: null,
 };
@@ -17,7 +17,7 @@ const notesSlice = createSlice({
 		getNotesSuccess: (state, action) => {
 			// console.log(action.payload);
 			state.loading = false;
-			state.notes = action.payload;
+			state.notes = [...state.notes , ...action.payload];
 		},
 		getNotesFailure: (state, action) => {
 			state.loading = false;
