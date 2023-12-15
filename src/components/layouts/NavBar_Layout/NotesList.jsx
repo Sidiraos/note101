@@ -5,7 +5,7 @@ const NotesList = () => {
     const notesData = useSelector(state => state.notes , shallowEqual);
     const {notes} = notesData
   return (
-    <ul>
+    <ul className="divide-y divide-slate-300">
       {notes.length > 0 && notes.map((note) => (
         <NotesListItem key={note.id} note={note} />
       ))}

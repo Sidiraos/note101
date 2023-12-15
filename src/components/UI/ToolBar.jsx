@@ -11,11 +11,11 @@ const ToolBar = ({ toolBar }) => {
 	}`;
 
 	return (
-		<header className={dynamicClasses}>
+		<aside className={dynamicClasses}>
 			<TitlebarButtons />
 			<FolderButtons />
 			<EditButton />
-		</header>
+		</aside>
 	);
 };
 export default React.memo(ToolBar);
