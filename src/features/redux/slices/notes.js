@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { BASE_URL } from '../../../constant/constant';
 
 const initialState = {
 	notes: null,
@@ -44,7 +45,7 @@ const notesSlice = createSlice({
 export const fetchNotesData = () => {
 	return (dispatch) => {
 		dispatch(getNotesRequest());
-		fetch('/data/notes.json')
+		fetch(`${BASE_URL}/data/notes.json`)
 			.then((res) => res.json())
 			.then((data) => dispatch(getNotesSuccess(data.notes)))
 			.catch((err) => dispatch(getNotesFailure(err.message)));
